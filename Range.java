@@ -6,9 +6,14 @@ public class Range implements IntegerSequence{
     this.end = end;
     current = start;
   }
-  public void reset(){  }
-  public int length(){  }
-  public boolean hasNext(){  }
+  public void reset(){
+    current = start;
+  }
+  public int length(){
+    return (end - start + 1);
+  }
+  public boolean hasNext(){ 
+  }
 
   //@throws NoSuchElementException
   public int next(){    }

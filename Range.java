@@ -12,10 +12,19 @@ public class Range implements IntegerSequence{
   public int length(){
     return (end - start + 1);
   }
-  public boolean hasNext(){ 
+  public boolean hasNext(){
+    return (current <= end && current >= start);
   }
 
   //@throws NoSuchElementException
-  public int next(){    }
+  public int next(){
+    if (!hasNext()){
+      throw new NoSuchElementException("No element next.");
+    }
+    else{
+      current += 1;
+      return (current - 1);
+    }
+  }
 
 }

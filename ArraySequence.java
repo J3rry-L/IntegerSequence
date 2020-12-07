@@ -14,9 +14,15 @@ public class ArraySequence implements IntegerSequence{
   public boolean hasNext(){
     return (currentIndex < data.length && current >= 0);
   }
-  
+
   public int next(){
-    return -1;
+    if (!hasNext()){
+      throw new NoSuchElementException("No element next.");
+    }
+    else{
+      currentIndex += 1;
+      return (data[currentIndex - 1]);
+    }
   }
   public int length(){
     return -1;

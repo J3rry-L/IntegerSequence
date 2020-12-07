@@ -12,6 +12,18 @@ public class ArraySequence implements IntegerSequence{
     currentIndex = 0;
   }
 
+  public ArraySequence(IntegerSequence otherseq){
+    otherseq.reset();
+    data = new int[otherseq.length()];
+    int i = 0;
+    while(otherseq.hasNext()){
+      data[i] = otherseq.next();
+      i++;
+    }
+    otherseq.reset();
+    currentIndex = 0;
+  }
+
   public boolean hasNext(){
     return (currentIndex < data.length && currentIndex >= 0);
   }
@@ -21,7 +33,7 @@ public class ArraySequence implements IntegerSequence{
       throw new NoSuchElementException("No element next.");
     }
     else{
-      currentIndex += 1;
+      currentIndex++;
       return (data[currentIndex - 1]);
     }
   }

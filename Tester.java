@@ -16,5 +16,14 @@ public class Tester{
     while(as.hasNext()){
       System.out.print(as.next()+", ");
     }
+
+    IntegerSequence s = new Range(10,20);
+    IntegerSequence t = new ArraySequence(s);
+
+    System.out.println("ArraySequence(seq):");
+    while(t.hasNext()){
+      System.out.print(t.next()+", ");
+    }
+    System.out.println();
   }
 }

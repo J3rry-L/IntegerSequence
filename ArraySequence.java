@@ -12,7 +12,7 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public boolean hasNext(){
-    return (currentIndex < data.length && current >= 0);
+    return (currentIndex < data.length && currentIndex >= 0);
   }
 
   public int next(){
@@ -24,8 +24,9 @@ public class ArraySequence implements IntegerSequence{
       return (data[currentIndex - 1]);
     }
   }
+
   public int length(){
-    return -1;
+    return data.length;
   }
   public void reset(){
   }

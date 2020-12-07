@@ -8,11 +8,13 @@ public class ArraySequence implements IntegerSequence{
     for (int i = 0; i < other.length; i++){
       data[i] = other[i];
     }
+    currentIndex = 0;
   }
 
   public boolean hasNext(){
-    return true;
+    return (currentIndex < data.length && current >= 0);
   }
+  
   public int next(){
     return -1;
   }
